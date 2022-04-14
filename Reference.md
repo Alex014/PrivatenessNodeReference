@@ -145,7 +145,7 @@ to run Privateness daemon
 ### Copy keys and config files
 Execute console commands:
 `mkdir ~/.ness`
-`cp out/config ~/.ness`
+`cp out/config/*.json ~/.ness`
 #### Config files
 * *emer.json* - connection to emercoin RPC
 * *ness.json* - Connection to Privateness wallet-daemon
