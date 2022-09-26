@@ -173,7 +173,9 @@ PRNG service is for getting random data from node.
 Read more about PRNG service [here](https://github.com/NESS-Network/NessNode#prng)
 
 #### Files service
-Not implemented yet ...
+
+This service can upload, download and store files
+
 #### IPFS service
 Not implemented yet ...
 # Testing
@@ -211,6 +213,8 @@ Usage: `python test-user.py <username> <node URL>`
     <node URL> - node URL
     <username> - Your username
 ```
+### Files service test
+
 # Writing your own client
 ## Codebase
 ### Python
