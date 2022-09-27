@@ -22,6 +22,9 @@ auth-id = sign(user.private_key, message)
 Signature is base32 encoded, but all keys are base64 encoded
 ### Shadowname
 Used to increase security stored in service/server side, auto-generated on registration.
+```
+$shadowname = md5(username-node.url-nonce-user.nonce: time())
+```
 ### Two-Way encryption
 The data being sent to service/server side is encrypted and then signed.
 ```
@@ -57,65 +60,119 @@ Always returned unencrypted
 
 #### Plain
 * nodes
+
 Return full list of nodes from blockchain
+
 URL: `http://node-url.net/node/nodes`
 * services
+
 Returns list of awailable services
+
 URL: `http://node-url.net/node/services`
 * pub
+
 Returns public key of current service node
+
 URL: `http://node-url.net/node/pub`
 * verify
+
 Returns verify key of current service node
+
 URL: `http://node-url.net/node/verify`
 * slots
+
 Returns ammount of open slots (awailable places for new users)
+
 URL: `http://node-url.net/node/slots`
+
 #### Two-Way
 * join
+
 User registration
+
 URL: `http://node-url.net/node/join`
+
 In (POST): 
+
 `username`, `data` - any random data, `sig` - signature of data
 Return data (JSON):
+
 `address` - generated user address in Privateness blockchain
+
 `shadowname` - newly generated shadowname of user
+
 or ERROR
+
 * joined
+
 Is user registered (joined)
+
 URL: `http://node-url.net/node/joined`
+
 In (POST):
+
 `username`, `data` - any random data, `sig` - signature of data
+
 Return data (JSON):
+
 `joined` - is user joined
+
 `address` - generated user address in Privateness blockchain
+
 `shadowname` - newly generated shadowname of user
+
 * balance
+
 Return joined user balance
+
 URL: `http://node-url.net/node/balance`
+
 In (POST):
+
 `shadowname`, `data` - any random data, `sig` - signature of data
+
 Return data (JSON):
+
 `balance` - balance in *NESS* and *NCH*
+
 * userinfo
+
 Return joined user info
+
 URL: `http://node-url.net/node/userinfo`
+
 In (POST):
+
 `shadowname`, `data` - any random data, `sig` - signature of data
+
 Return data (JSON):
+
 `userinfo` - 
+
 *balance* - balance in *NESS* and *NCH*,
+
 *joined* - is user joined, 
+
 *is_active* - is user active (has positive balance)
+
 * withdraw
+
 Withdraw funds
+
 URL: `http://node-url.net/node/withdraw`
+
 In (POST):
+
 `shadowname`, `data` - encrypted JSON:
+
 *coins* - amound of NESS to withdraw
+
 *hours* - amound of NCH to withdraw
+
 *to_addr* - external Privateness address
+
 , `sig` - signature of data
+
 Return: success - TEXT
 
 ## PRNG service
@@ -154,61 +211,130 @@ Randomly generated array of hex (h256) numbers
 
 ### File ID
 Service/Server generated file ID
+
 ```$file_id = sha1($filename + salt)```
+
 ### API
 
 #### Auth ID
  * download
+
 Internal dawnload link for selected file
+
 URL: `http://node-url.net/files/download/$file_id/$shadowname/$auth-id`
+
 Return: File download with resume support via HTTP headers
+
  * append
+
 Upload a part of file and append this part to existing (olready created by *touch*) file.
+
 URL: `http://node-url.net/files/append/$file_id/$shadowname/$auth-id`
+
 INPUT: file body inside HTTP request
+
 Return data (JSON):
+
 `size`: file size on server
+
 or ERROR
 
 #### Alternative ID
  * pub
+
 External dawnload link for selected file
+
 URL: `http://node-url.net/files/pub/$file_id-$shadowname-$alternative-id`
+
 Return: File download with resume support via HTTP headers
 
 #### Two-Way
 * quota
+
 Used, Free and total user's quota in bytes
+
+In (POST):
+
+`username` - shadowname of user, `data` - any random data, `sig` - signature of data
+
 URL: `http://node-url.net/files/quota`
+
 Return (JSON):
+
 `total`: total space awailable for user in bytes
+
 `used`: used space in bytes
+
 `free`: free left space in bytes
+
 * list
+
 List of all users file
+
+In (POST):
+
+`username` - shadowname of user, `data` - any random data, `sig` - signature of data
+
 URL: `http://node-url.net/files/list`
+
 Return (JSON):
+
 [ {
+
 `filename`: filename
+
 `size`: file size
+
 `id`: file ID
+
 }, ... ]
+
 * fileinfo
+
+In (POST):
+
+`username` - shadowname of user, `file_id` - file ID,  `data` - any random data, `sig` - signature of data
+
 Information about file
+
 URL: `http://node-url.net/files/fileinfo`
+
 Return (JSON):
+
 `filename`: filename
+
 `size`: file size
+
 `id`: file ID
+
+or ERROR if file does not exist
+
 * touch
+
+In (POST):
+
+`username` - shadowname of user, `filename` - encrypted filename,  `data` - any random data, `sig` - signature of data
+
 Create file
+
 URL: `http://node-url.net/files/touch`
+
 Return data (JSON):
-`size`: 0 
+
+`size`: 0
+
+`id`: File ID
+
 if file was created
+
 or ERROR if file not created
+
 * remove
+
 Delete file
+
 URL: `http://node-url.net/files/remove`
+
 Return (TEXT): OK
+
 or ERROR if file wa not removed
