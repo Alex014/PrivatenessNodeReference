@@ -95,6 +95,7 @@ URL: `http://node-url.net/node/join`
 In (POST): 
 
 `username`, `data` - any random data, `sig` - signature of data
+
 Return data (JSON):
 
 `address` - generated user address in Privateness blockchain
