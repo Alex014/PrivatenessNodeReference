@@ -188,12 +188,7 @@ directory
 
 ### ~/.privateness-common
 
-+++
-===
-+++
-===
-___
-===
+
 Password Encrypted Key File
 ===========================
 
@@ -227,7 +222,4 @@ directory
 
 ### flashdrive
 
-
-Tasks
------
 
