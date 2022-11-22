@@ -15,7 +15,6 @@ Node Key File
     - node
 
   - filename
-    - <node-url>.key.json
 
 
 ### keys
@@ -67,9 +66,8 @@ User Key File (flashdrive)
   - for
     - user
 
-  - filename
-    - <username>.key.json
 
+### username
 
 ### keys
   - private
@@ -117,9 +115,6 @@ privateness-tools.json
 
   - for
     - privateness-tools
-
-  - filename
-    - privateness-tools.json
 
 
 ### files
@@ -169,9 +164,8 @@ User Key File (local)
   - for
     - user-local
 
-  - filename
-    - <username>.local.key.json
 
+### username
 
 ### keys
   - public
@@ -188,7 +182,12 @@ directory
 
 ### ~/.privateness-common
 
-
++++
+===
++++
+===
+___
+===
 Password Encrypted Key File
 ===========================
 
@@ -222,4 +221,7 @@ directory
 
 ### flashdrive
 
+
+Tasks
+-----
 
