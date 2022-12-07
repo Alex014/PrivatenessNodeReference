@@ -14,8 +14,6 @@ Node Key File
   - for
     - node
 
-  - filename
-
 
 ### keys
   - private
@@ -214,6 +212,12 @@ Password Encrypted Key File
   - Password Encrypted Key 1 gwh8gw47gh8o
   - Password Encrypted Key 2 wo3hgw78o3hgw
   - ...
+
+
+### crc [...]
+  - crc for key 0
+  - crc for key 1
+  - ........
 
 
 directory
