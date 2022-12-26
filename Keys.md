@@ -98,53 +98,47 @@ directory
 
 ### flashdrive
 
-Application Key File(s) (local)
-===============================
+Nodes list (local)
+==================
 
-privateness-tools.json
-----------------------
+nodes.json
+----------
 
 ### filedata
   - vendor
     - Privateness
 
   - type
-    - application
+    - data
 
   - for
-    - privateness-tools
+    - nodes-list
 
 
-### files
-  - node URL (service node URL where file is stored)
-    - filename1
-      - cipher
-        - 78oqf3hfyuf;ohf9qp43hgafgre (separate cipher for each file)
+### nodes[]
+  - 0
+    - url
+      - service node url where file is stored
 
-      - cipher-type
-        - salsa20
+    - pub
+      - public key
 
-      - shadowname
-        - generated shadowname of the file (stored localy)
+    - ver
+      - verify key
 
-      - directory
-        -  
+    - nonce
+    - master
+    - tariff
+    - tags[]
 
-    - filename2 ...
-
-
-### current-node
-  - node-url
-
-
-### my-nodes
-  - [URL1, URL2, ....]
+  - 1
+  - ...
 
 
 directory
 ---------
 
-### ~/.privateness-common
+### ~/.privateness-keys
 
 User Key File (local)
 =====================
@@ -178,7 +172,7 @@ User Key File (local)
 directory
 ---------
 
-### ~/.privateness-common
+### ~/.privateness-keys
 
 +++
 ===
@@ -224,6 +218,106 @@ directory
 ---------
 
 ### flashdrive
+
+Files info (local)
+==================
+
+files.json
+----------
+
+### filedata
+  - vendor
+    - Privateness
+
+  - type
+    - service
+
+  - for
+    - files
+
+
+### files
+  - node url (service node URL where file is stored)
+    - filename1
+      - cipher
+        - 78oqf3hfyuf;ohf9qp43hgafgre (separate cipher for each file)
+
+      - cipher-type
+        - salsa20
+
+      - shadowname
+        - generated shadowname of the file (stored localy)
+
+      - directory
+        -  
+
+    - filename2 ...
+
+
+directory
+---------
+
+### ~/.privateness-keys
+
+My Nodes (local)
+================
+
+directory
+---------
+
+### ~/.privateness-keys
+
+
+my-nodes.json
+-------------
+
+### filedata
+  - vendor
+    - Privateness
+
+  - type
+    - service
+
+  - for
+    - node
+
+
+### current-node
+  - node URL
+
+
+### my-nodes
+  - URL
+    - shadowname
+      - users shadowname (for this current node)
+
+  - URL
+  - URL
+
+Blockchain RPC (local)
+======================
+
+blockchain-rpc.json
+-------------------
+
+### filedata
+  - vendor
+    - Privateness
+
+  - type
+    - config
+
+  - for
+    - blockchain
+
+
+### rpc-host
+
+### rpc-port
+
+### rpc-user
+
+### rpc-password
 
 
 Tasks
