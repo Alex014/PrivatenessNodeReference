@@ -130,7 +130,7 @@ URL: `http://node-url.net/node/balance`
 
 In (POST):
 
-`shadowname`, `data` - any random data, `sig` - signature of data
+`username` - shadowname, `data` - any random data, `sig` - signature of data
 
 Return data (JSON):
 
@@ -144,7 +144,7 @@ URL: `http://node-url.net/node/userinfo`
 
 In (POST):
 
-`shadowname`, `data` - any random data, `sig` - signature of data
+`username` - shadowname, `data` - any random data, `sig` - signature of data
 
 Return data (JSON):
 
