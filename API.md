@@ -81,7 +81,7 @@ Returns verify key of current service node
 URL: `http://node-url.net/node/verify`
 * slots
 
-Returns ammount of open slots (awailable places for new users)
+Returns amount of open slots (awailable places for new users)
 
 URL: `http://node-url.net/node/slots`
 
