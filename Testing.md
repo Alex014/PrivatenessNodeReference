@@ -1,6 +1,6 @@
 # Testing
 ## Running tests
-Change your directory to*NessNodeTester*
+Change your directory to *NessNodeTester*
 ### Authentication test
 Test user authentication
 
