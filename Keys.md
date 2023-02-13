@@ -32,7 +32,7 @@ Node Key File
 
 
 ### tags
-  - coma,separated,tags
+  - comma,separated,tags
 
 
 ### tariff
