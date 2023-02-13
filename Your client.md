@@ -15,7 +15,7 @@ Authenticate user by Authentication ID and return data from the node
 * user_nonce - cryptographic salt
 
 `def   get_by_two_way_encryption(self, node_full_url: str, data: str, node_public_key: str, user_private_key: str, username: str):`
-Authenticate user by Two-Way encription and return data from the node
+Authenticate user by Two-Way encryption and return data from the node
 * node\_full\_url - The full URL of the node you're querying
 * data - The data you want to send to the node
 * node_public_key - The public key of the node you're sending the data to
