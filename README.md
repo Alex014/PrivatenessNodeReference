@@ -1,4 +1,4 @@
-# Philosophy
+E# Philosophy
 ## Decentralisation
 * No central authority
 * No central server
