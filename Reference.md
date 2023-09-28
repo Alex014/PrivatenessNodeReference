@@ -19,7 +19,7 @@
 ## Coin-Hours as a payment system
 The Ness Coins generate Coin-Hours and it is main payment method. 
 The User pays with Coin-Hours for time he user the Node.
-# Instalation
+# Installation
 The Node works on the top of Emercoin and Privateness blockchains.
 
 To install your Node and test it with your User you must do the following:
@@ -129,7 +129,7 @@ VALUE:
 Now run the server and it will generate files with random data
 `python server.py`
 
-## Node enviroment
+## Node environment
 ***
 #### Install Privateness wallet
 `git clone https://github.com/NESS-Network/privateness`
